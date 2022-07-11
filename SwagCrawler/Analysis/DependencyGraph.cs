@@ -15,6 +15,11 @@ public class DependencyGraph: IEnumerable<GraphNode>
     {
         return _nodes.TryAdd(node.RefIf, node);
     }
+    
+    public bool TryGet(string refId, out GraphNode? node)
+    {
+        return _nodes.TryGetValue(refId, out node);
+    }
 
     public IEnumerator<GraphNode> GetEnumerator()
     {
